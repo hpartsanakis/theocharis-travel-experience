@@ -12,3 +12,26 @@ navLinks.forEach((link) => {
     siteNav.classList.remove("active");
   });
 });
+
+const galleryItems = document.querySelectorAll(".gallery-item img");
+const lightbox = document.querySelector(".lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+galleryItems.forEach((image) => {
+  image.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = image.src;
+    lightboxImg.alt = image.alt;
+  });
+});
+
+lightboxClose.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    lightbox.classList.remove("active");
+  }
+});

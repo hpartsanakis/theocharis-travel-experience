@@ -253,6 +253,35 @@ a {
   border: 1px solid rgba(203, 213, 225, 0.08);
 }
 
+/* ========== LIGHTBOX ========== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(2, 6, 23, 0.92);
+  display: none;
+  place-items: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+.lightbox.active {
+  display: grid;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #f8fafc;
+  cursor: pointer;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 1rem;
+}
+
 /* ========== FOOTER ========== */
 .site-footer {
   padding: 4rem 0;
