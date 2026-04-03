@@ -137,6 +137,12 @@ a {
 .site-nav.active {
   display: flex;
 }
+
+/* ========= Intro ========== */
+ .section-intro {
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
 /* ========== HERO ========== */
 .hero {
   min-height: 85vh;
@@ -152,6 +158,11 @@ a {
   max-width: 700px;
 }
 
+.hero-text p{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 .hero p {
   margin-top: 1rem;
   font-size: 1.1rem;
@@ -159,8 +170,22 @@ a {
 }
 
 /* ========== ABOUT ========== */
+
 .about p {
   max-width: 700px;
+}
+
+.about,
+.destinations,
+.gallery,
+.stories {
+  scroll-margin-top: 100px;
+}
+
+.story p,
+.card-content p,
+.site-footer p {
+  max-width: 65ch;
 }
 
 /* ========== DESTINATIONS ========== */
