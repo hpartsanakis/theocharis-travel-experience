@@ -13,13 +13,14 @@ navLinks.forEach((link) => {
   });
 });
 
-const galleryItems = document.querySelectorAll(".gallery-item img");
+const galleryItems = document.querySelectorAll(".gallery-item");
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
 const lightboxClose = document.querySelector(".lightbox-close");
 
-galleryItems.forEach((image) => {
-  image.addEventListener("click", () => {
+galleryItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const image = item.querySelector("img");
     lightbox.classList.add("active");
     lightboxImg.src = image.src;
     lightboxImg.alt = image.alt;
