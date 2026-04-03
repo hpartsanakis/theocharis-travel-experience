@@ -118,6 +118,25 @@ a {
   color: #ffffff;
 }
 
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #f8fafc;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: block;
+}
+
+.site-nav {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.site-nav.active {
+  display: flex;
+}
 /* ========== HERO ========== */
 .hero {
   min-height: 85vh;
@@ -251,6 +270,16 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0;
   }
 
   .card-grid {
