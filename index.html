@@ -1,212 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Theocharis Travel Experience</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
     <header class="site-header">
-  <div class="container">
-    <div class="logo">
-      <a href="#">Theocharis Travel Experience</a>
-    </div>
+      <div class="container">
+        <div class="logo">
+          <a href="#">Theocharis Travel Experience</a>
+        </div>
 
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
 
-    <nav class="site-nav">
-      <a href="#about">About</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#stories">Stories</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+        <nav class="site-nav">
+          <a href="#about">About</a>
+          <a href="#destinations">Destinations</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#stories">Stories</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
-        <section class="hero reveal">
-  <div class="container">
-    <div class="hero-text">
-      <h1>Theocharis Travel Experience</h1>
-      <p>
-        Travel photography, personal moments, and stories from the cities,
-        landscapes, and journeys that inspired me along the way.
-      </p>
-      <a href="#gallery" class="btn">Explore Gallery</a>
-    </div>
-  </div>
-</section>
+      <section class="hero reveal">
+        <div class="container">
+          <div class="hero-text">
+            <h1>Theocharis Travel Experience</h1>
+            <p>
+              Travel photography, personal moments, and stories from the cities,
+              landscapes, and journeys that inspired me along the way.
+            </p>
+            <a href="#gallery" class="btn">Explore Gallery</a>
+          </div>
+        </div>
+      </section>
 
-        <section id="about" class="about reveal">
-  <div class="container">
-    <h2>About This Journey</h2>
-    <p>
-      Welcome to Theocharis Travel Experience — a personal space where I share
-      travel photography, impressions, and memories from the places I have visited.
-      This website brings together images, destinations, and stories from journeys
-      across cities, nature, and unforgettable moments on the road.
-    </p>
-  </div>
-</section>
-
-        <section id="destinations" class="destinations reveal">
-  <div class="container">
-    <h2>Featured Destinations</h2>
-    <p class="section-intro">
-      A selection of places that left a strong impression on me through light,
-      atmosphere, and unforgettable travel moments.
-    </p>
-
-    <div class="card-grid">
-      <article class="card">
-        <img
-          src="https://images.unsplash.com/photo-1517821365201-7734f463f1b8?auto=format&fit=crop&w=900&q=80"
-          alt="Snowy landscape in Tromsø"
-        />
-        <div class="card-content">
-          <h3>Tromsø</h3>
+      <section id="about" class="about reveal">
+        <div class="container">
+          <h2>About This Journey</h2>
           <p>
-            Arctic light, snowy streets, fjords, and unforgettable winter nights
-            under the northern sky.
+            Welcome to Theocharis Travel Experience — a personal space where I
+            share travel photography, impressions, and memories from the places
+            I have visited. This website brings together images, destinations,
+            and stories from journeys across cities, nature, and unforgettable
+            moments on the road.
           </p>
         </div>
-      </article>
+      </section>
 
-      <article class="card">
-        <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-          alt="Landscape view in Lofoten"
-        />
-        <div class="card-content">
-          <h3>Lofoten</h3>
-          <p>
-            Dramatic mountains, coastal roads, fishing villages, and raw natural
-            beauty in every direction.
+      <section id="destinations" class="destinations reveal">
+        <div class="container">
+          <h2>Featured Destinations</h2>
+          <p class="section-intro">
+            A selection of places that left a strong impression on me through
+            light, atmosphere, and unforgettable travel moments.
           </p>
-        </div>
-      </article>
 
-      <article class="card">
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=900&q=80"
-          alt="Urban travel photography in a city"
-        />
-        <div class="card-content">
-          <h3>City Journeys</h3>
-          <p>
-            Street moments, reflections, architecture, and everyday life captured
-            through my lens in different cities.
+          <div class="card-grid" id="featured-destinations"></div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery reveal">
+        <div class="container">
+          <h2>Featured Gallery</h2>
+          <p class="section-intro">
+            A curated selection of travel images from landscapes, roads,
+            coastlines, cities, and moments that stood out along the journey.
           </p>
+
+          <div class="gallery-grid" id="featured-gallery"></div>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </section>
 
-        <section id="gallery" class="gallery reveal">
-  <div class="container">
-    <h2>Featured Gallery</h2>
-    <p class="section-intro">
-      A curated selection of travel images from landscapes, roads, coastlines,
-      cities, and moments that stood out along the journey.
-    </p>
+      <section id="stories" class="stories reveal">
+        <div class="container">
+          <h2>Travel Stories</h2>
+          <p class="section-intro">
+            Short personal notes and impressions from journeys that stayed with
+            me long after the trip ended.
+          </p>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
-          alt="Mountain landscape"
-        />
-        <div class="overlay">View</div>
-      </div>
+          <article class="story">
+            <h3>Walking Through Verona</h3>
+            <p>
+              Verona felt elegant and calm at the same time. Walking through its
+              streets, I was drawn to the warm colors, the historic buildings,
+              and the atmosphere that made even ordinary moments feel cinematic.
+              It was a city that invited me to slow down, observe, and
+              photograph details that might easily be missed at first glance.
+            </p>
+          </article>
 
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80"
-          alt="Road trip landscape"
-        />
-        <div class="overlay">View</div>
-      </div>
+          <article class="story">
+            <h3>First Impressions of Edinburgh</h3>
+            <p>
+              Edinburgh immediately gave me a strong sense of character. The
+              stone streets, the historic architecture, and the changing light
+              created a dramatic mood that stayed with me from the first walk
+              onward. It felt like a city made for photography, where every
+              corner offered texture, depth, and a story of its own.
+            </p>
+          </article>
 
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80"
-          alt="Nature and mountains"
-        />
-        <div class="overlay">View</div>
-      </div>
-
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=900&q=80"
-          alt="Lake and mountains"
-        />
-        <div class="overlay">View</div>
-      </div>
-
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80"
-          alt="Travel moment in nature"
-        />
-        <div class="overlay">View</div>
-      </div>
-
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
-          alt="Sea and coastal landscape"
-        />
-        <div class="overlay">View</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <section id="stories" class="stories reveal">
-  <div class="container">
-    <h2>Travel Stories</h2>
-    <p class="section-intro">
-      Short personal notes and impressions from journeys that stayed with me
-      long after the trip ended.
-    </p>
-
-    <article class="story">
-      <h3>First Impressions of Tromsø</h3>
-      <p>
-        The cold air, the quiet atmosphere, and the feeling of standing far above
-        the familiar map made Tromsø unforgettable from the very first evening.
-      </p>
-    </article>
-
-    <article class="story">
-      <h3>Driving Through Lofoten</h3>
-      <p>
-        Between sea, snow, bridges, and mountain walls, every turn in Lofoten
-        felt like a new scene waiting to become a photograph.
-      </p>
-    </article>
-  </div>
-</section>
+          <article class="story">
+            <h3>Light and Sea in Paros</h3>
+            <p>
+              Paros had a completely different rhythm. The bright island light,
+              the white streets, and the blue sea created a clean and open
+              feeling that naturally pulled me toward photography. It was a
+              place of simple beauty, where the atmosphere came from light,
+              color, and quiet summer moments.
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer id="contact" class="site-footer reveal">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: info@theocharistravelexperience.com</p>
-            <p>Instagram: @theocharistravelexperience</p>
-            <p>&copy; 2024 Theocharis Travel Experience. All rights reserved.</p>
-        </div>
-        </footer>
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: your@email.com</p>
+        <p>Instagram: @harrispartsanakis</p>
+      </div>
+    </footer>
 
-<div class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" src="" alt="Expanded gallery image" />
-</div>
+    <div class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-img" src="" alt="Expanded gallery image" />
+    </div>
 
-<script src="script.js"></script>
-</body>
+    <script src="data/destinations.js"></script>
+    <script src="data/photos.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
