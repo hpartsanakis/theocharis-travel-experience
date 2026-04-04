@@ -235,6 +235,57 @@ a {
   color: #f8fafc;
   opacity: 0.75;
 }
+
+.destination-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.destination-card-link::after {
+  content: "Open destination";
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  color: #f8fafc;
+  opacity: 0.75;
+}
+
+.destination-hero {
+  min-height: 75vh;
+}
+
+.destination-hero-verona {
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.82)),
+    url("images/italy/verona/verona-cover.jpg") center/cover no-repeat;
+}
+
+.destination-hero-paros {
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.78)),
+    url("images/greece/cyclades/paros-cover.jpeg") center/cover no-repeat;
+}
+
+.destination-hero-edinburgh {
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
+    url("images/scotland/edinburgh/edinburgh-cover.jpeg") center/cover no-repeat;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+}
+
+.city-gallery {
+  margin-top: 1rem;
+}
 /* ========== GALLERY ========== */
 .gallery-grid {
   display: grid;
@@ -283,6 +334,11 @@ a {
   opacity: 1;
 }
 
+.overlay span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
 /* ========== GALLERY Filters ========== */
 .gallery-filter-groups {
   display: grid;
@@ -323,8 +379,11 @@ a {
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1;
-  transition: background-color 0.25s ease, color 0.25s ease,
-    border-color 0.25s ease, transform 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .filter-btn:hover {

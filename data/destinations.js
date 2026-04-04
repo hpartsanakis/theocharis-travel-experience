@@ -7,9 +7,10 @@ const destinations = [
     year: "2025",
     category: "City",
     featured: true,
-    coverImage: "images/italy/verona/verona_01.jpeg",
+    coverImage: "images/italy/verona/verona-cover.jpg",
     shortDescription:
       "Historic streets, elegant architecture, and warm Italian city atmosphere.",
+    page: "verona.html",
   },
   {
     id: 2,
@@ -19,9 +20,10 @@ const destinations = [
     year: "2025",
     category: "Coastal",
     featured: true,
-    coverImage: "images/greece/cyclades/paros-cover.jpeg",
+    coverImage: "images/greece/cyclades/paros-cover.jpg",
     shortDescription:
       "White villages, blue sea, island light, and relaxed summer moments.",
+    page: "paros.html",
   },
   {
     id: 3,
@@ -31,8 +33,9 @@ const destinations = [
     year: "2025",
     category: "City",
     featured: true,
-    coverImage: "images/scotland/edi_01.jpeg",
+    coverImage: "images/scotland/edi-cover.jpg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
+    page: "edinburgh.html",
   },
 ];
