@@ -226,6 +226,15 @@ a {
   max-width: 65ch;
 }
 
+.card::after {
+  content: "View Photos";
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  color: #f8fafc;
+  opacity: 0.75;
+}
 /* ========== GALLERY ========== */
 .gallery-grid {
   display: grid;
@@ -272,6 +281,50 @@ a {
 
 .gallery-item:hover .overlay {
   opacity: 1;
+}
+
+/* ========== GALLERY Filters ========== */
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0 2.2rem;
+}
+
+.filter-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(203, 213, 225, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e2e8f0;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(248, 250, 252, 0.1);
+  color: #ffffff;
+  border-color: rgba(248, 250, 252, 0.3);
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #f8fafc;
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid rgba(248, 250, 252, 0.7);
+  outline-offset: 3px;
 }
 
 /* ========== STORIES ========== */
