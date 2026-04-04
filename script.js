@@ -21,13 +21,30 @@ const featuredDestinationsContainer = document.querySelector(
   "#featured-destinations"
 );
 const featuredGalleryContainer = document.querySelector("#featured-gallery");
-const galleryFiltersContainer = document.querySelector("#gallery-filters");
+
+const categoryFiltersContainer = document.querySelector("#category-filters");
+const countryFiltersContainer = document.querySelector("#country-filters");
+const cityFiltersContainer = document.querySelector("#city-filters");
 
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
 const lightboxClose = document.querySelector(".lightbox-close");
 
-let activeFilter = "All";
+let activeCategory = "All";
+let activeCountry = "All";
+let activeCity = "All";
+
+const getFeaturedPhotos = () => {
+  if (typeof photos === "undefined" || !Array.isArray(photos)) {
+    return [];
+  }
+
+  return photos.filter((photo) => photo.featured);
+};
+
+const getUniqueValues = (items, key) => {
+  return ["All", ...new Set(items.map((item) => item[key]))];
+};
 
 const renderFeaturedDestinations = () => {
   if (
@@ -60,39 +77,49 @@ const renderFeaturedDestinations = () => {
     .join("");
 };
 
-const getGalleryFilters = () => {
-  if (typeof photos === "undefined" || !Array.isArray(photos)) {
-    return ["All"];
-  }
+const renderFilterButtons = (container, items, activeValue, dataType) => {
+  if (!container) return;
 
-  const featuredPhotos = photos.filter((photo) => photo.featured);
-
-  const categoryFilters = featuredPhotos.map((photo) => photo.category);
-  const countryFilters = featuredPhotos.map((photo) => photo.country);
-  const cityFilters = featuredPhotos.map((photo) => photo.city);
-
-  return [
-    "All",
-    ...new Set([...categoryFilters, ...countryFilters, ...cityFilters]),
-  ];
-};
-
-const renderGalleryFilters = () => {
-  if (!galleryFiltersContainer) return;
-
-  const filters = getGalleryFilters();
-
-  galleryFiltersContainer.innerHTML = filters
-    .map((filter) => {
-      const activeClass = filter === activeFilter ? "active" : "";
+  container.innerHTML = items
+    .map((item) => {
+      const activeClass = item === activeValue ? "active" : "";
 
       return `
-        <button class="filter-btn ${activeClass}" data-filter="${filter}">
-          ${filter}
+        <button
+          class="filter-btn ${activeClass}"
+          data-type="${dataType}"
+          data-value="${item}"
+          type="button"
+        >
+          ${item}
         </button>
       `;
     })
     .join("");
+};
+
+const renderGalleryFilters = () => {
+  const featuredPhotos = getFeaturedPhotos();
+
+  const categoryFilters = getUniqueValues(featuredPhotos, "category");
+  const countryFilters = getUniqueValues(featuredPhotos, "country");
+  const cityFilters = getUniqueValues(featuredPhotos, "city");
+
+  renderFilterButtons(
+    categoryFiltersContainer,
+    categoryFilters,
+    activeCategory,
+    "category"
+  );
+
+  renderFilterButtons(
+    countryFiltersContainer,
+    countryFilters,
+    activeCountry,
+    "country"
+  );
+
+  renderFilterButtons(cityFiltersContainer, cityFilters, activeCity, "city");
 };
 
 const setupLightbox = () => {
@@ -112,23 +139,26 @@ const setupLightbox = () => {
 };
 
 const renderFeaturedGallery = () => {
-  if (
-    !featuredGalleryContainer ||
-    typeof photos === "undefined" ||
-    !Array.isArray(photos)
-  ) {
+  if (!featuredGalleryContainer) {
     return;
   }
 
-  let filteredPhotos = photos.filter((photo) => photo.featured);
+  let filteredPhotos = getFeaturedPhotos();
 
-  if (activeFilter !== "All") {
+  if (activeCategory !== "All") {
     filteredPhotos = filteredPhotos.filter(
-      (photo) =>
-        photo.category === activeFilter ||
-        photo.country === activeFilter ||
-        photo.city === activeFilter
+      (photo) => photo.category === activeCategory
     );
+  }
+
+  if (activeCountry !== "All") {
+    filteredPhotos = filteredPhotos.filter(
+      (photo) => photo.country === activeCountry
+    );
+  }
+
+  if (activeCity !== "All") {
+    filteredPhotos = filteredPhotos.filter((photo) => photo.city === activeCity);
   }
 
   featuredGalleryContainer.innerHTML = filteredPhotos
@@ -150,7 +180,21 @@ const setupGalleryFilterEvents = () => {
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      activeFilter = button.dataset.filter;
+      const type = button.dataset.type;
+      const value = button.dataset.value;
+
+      if (type === "category") {
+        activeCategory = value;
+      }
+
+      if (type === "country") {
+        activeCountry = value;
+      }
+
+      if (type === "city") {
+        activeCity = value;
+      }
+
       renderGalleryFilters();
       renderFeaturedGallery();
       setupGalleryFilterEvents();
@@ -167,7 +211,8 @@ const setupDestinationCardEvents = () => {
     card.addEventListener("click", () => {
       const selectedCity = card.dataset.city;
 
-      activeFilter = selectedCity;
+      activeCity = selectedCity;
+
       renderGalleryFilters();
       renderFeaturedGallery();
       setupGalleryFilterEvents();
