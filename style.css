@@ -275,17 +275,50 @@ a {
 }
 
 /* ========== FOOTER ========== */
-.site-footer {
-  padding: 4rem 0;
-  background-color: #020617;
-  border-top: 1px solid rgba(203, 213, 225, 0.08);
-}
-
 .site-footer p {
   margin-bottom: 0.5rem;
   max-width: 65ch;
 }
 
+.site-footer {
+  padding: 5rem 0;
+  background-color: #020617;
+  border-top: 1px solid rgba(203, 213, 225, 0.08);
+}
+
+.contact-box {
+  max-width: 700px;
+}
+
+.contact-text {
+  max-width: 60ch;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(203, 213, 225, 0.2);
+  color: #f8fafc;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-2px);
+  background-color: rgba(248, 250, 252, 0.08);
+  border-color: rgba(248, 250, 252, 0.4);
+}
 /* ========== LIGHTBOX ========== */
 .lightbox {
   position: fixed;
