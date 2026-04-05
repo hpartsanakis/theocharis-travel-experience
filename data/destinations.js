@@ -20,7 +20,7 @@ const destinations = [
     year: "2025",
     category: "Coastal",
     featured: true,
-    coverImage: "images/greece/cyclades/paros-cover.jpg",
+    coverImage: "images/greece/paros/paros-cover.jpeg",
     shortDescription:
       "White villages, blue sea, island light, and relaxed summer moments.",
     page: "paros.html",
@@ -33,7 +33,7 @@ const destinations = [
     year: "2025",
     category: "City",
     featured: true,
-    coverImage: "images/scotland/edi-cover.jpg",
+    coverImage: "images/scotland/edinburgh/edinburgh-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "edinburgh.html",
