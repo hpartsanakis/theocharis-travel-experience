@@ -34,19 +34,49 @@ const renderFeaturedDestinations = () => {
     (destination) => destination.featured
   );
 
-  featuredDestinationsContainer.innerHTML = featuredDestinations
-    .map((destination) => {
+  const groupedByCountry = featuredDestinations.reduce((groups, destination) => {
+    const country = destination.country;
+
+    if (!groups[country]) {
+      groups[country] = [];
+    }
+
+    groups[country].push(destination);
+    return groups;
+  }, {});
+
+  const sortedCountries = Object.keys(groupedByCountry).sort((a, b) =>
+    a.localeCompare(b)
+  );
+
+  featuredDestinationsContainer.innerHTML = sortedCountries
+    .map((country) => {
+      const countryDestinations = groupedByCountry[country].sort((a, b) =>
+        a.city.localeCompare(b.city)
+      );
+
       return `
-        <a href="${destination.page}" class="card destination-card-link">
-          <img
-            src="${destination.coverImage}"
-            alt="${destination.city}, ${destination.country}"
-          />
-          <div class="card-content">
-            <h3>${destination.city}</h3>
-            <p>${destination.shortDescription}</p>
+        <div class="destination-group">
+          <h3 class="destination-group-title">${country}</h3>
+          <div class="card-grid">
+            ${countryDestinations
+              .map((destination) => {
+                return `
+                  <a href="${destination.page}" class="card destination-card-link">
+                    <img
+                      src="${destination.coverImage}"
+                      alt="${destination.city}, ${destination.country}"
+                    />
+                    <div class="card-content">
+                      <h3>${destination.city}</h3>
+                      <p>${destination.shortDescription}</p>
+                    </div>
+                  </a>
+                `;
+              })
+              .join("")}
           </div>
-        </a>
+        </div>
       `;
     })
     .join("");

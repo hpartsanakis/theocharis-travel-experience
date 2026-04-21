@@ -198,6 +198,9 @@ a {
   display: flex;
   align-items: center;
   position: relative;
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.82)),
+    var(--hero-image) center/cover no-repeat;
 }
 
 .destination-hero::after {
@@ -209,63 +212,6 @@ a {
     rgba(2, 6, 23, 0.2),
     rgba(2, 6, 23, 0.7)
   );
-}
-
-.destination-hero-verona {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.82)),
-    url("images/italy/verona/verona-cover.jpg") center/cover no-repeat;
-}
-
-.destination-hero-paros {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.78)),
-    url("images/greece/paros/paros-cover.jpg") center/cover no-repeat;
-}
-.destination-hero-edinburgh {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/scotland/edinburgh/edinburgh-cover.jpg") center/cover no-repeat;
-}
-.destination-hero-copenhagen {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/denmark/copenhagen/copenhagen-cover.jpg") center/cover no-repeat;
-}
-.destination-hero-london {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/england/london/london-cover.jpeg") center/cover no-repeat;
-}
-.destination-hero-reykjavik {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/iceland/reykjavik-cover.jpeg") center/cover no-repeat;
-}
-.destination-hero-dublin {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/ireland/dublin/dublin-cover.jpeg") center/cover no-repeat;
-}
-.destination-hero-florence {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/italy/florence/florence-cover.jpeg") center/cover no-repeat;
-}
-.destination-hero-milan {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/italy/milan/milan-cover.jpeg") center/cover no-repeat;
-}
-.destination-hero-oslo {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/norway/oslo/oslo-cover.jpeg") center/cover no-repeat;
-}
-.destination-hero-eipiros {
-  background:
-    linear-gradient(rgba(2, 6, 23, 0.58), rgba(2, 6, 23, 0.82)),
-    url("images/greece/eipiros/eipiros-cover.jpeg") center/cover no-repeat;
 }
 
 .eyebrow {
@@ -355,6 +301,24 @@ a {
   letter-spacing: 0.04em;
   color: rgba(248, 250, 252, 0.62);
 }
+
+.destination-group {
+  margin-bottom: 3rem;
+}
+
+.destination-group:last-child {
+  margin-bottom: 0;
+}
+
+.destination-group-title {
+  font-size: 1.25rem;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(203, 213, 225, 0.78);
+  margin-bottom: 1.2rem;
+}
+
 
 /* ========== GALLERY ========== */
 .gallery-grid {

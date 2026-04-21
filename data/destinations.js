@@ -10,7 +10,7 @@ const destinations = [
     coverImage: "images/italy/verona/verona-cover.jpg",
     shortDescription:
       "Historic streets, elegant architecture, and warm Italian city atmosphere.",
-    page: "verona.html",
+    page: "cities/verona.html",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const destinations = [
     coverImage: "images/greece/paros/paros-cover.jpeg",
     shortDescription:
       "White villages, blue sea, island light, and relaxed summer moments.",
-    page: "paros.html",
+    page: "cities/paros.html",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const destinations = [
     coverImage: "images/scotland/edinburgh/edinburgh-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "edinburgh.html",
+    page: "cities/edinburgh.html",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const destinations = [
     coverImage: "images/denmark/copenhagen/copenhagen-cover.jpg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "copenhagen.html",
+    page: "cities/copenhagen.html",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const destinations = [
     coverImage: "images/england/london/london-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "london.html",
+    page: "cities/london.html",
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ const destinations = [
     coverImage: "images/iceland/reykjavik-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "iceland.html",
+    page: "cities/iceland.html",
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ const destinations = [
     coverImage: "images/ireland/dublin/dublin-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "dublin.html",
+    page: "cities/dublin.html",
   },
   {
     id: 8,
@@ -101,7 +101,7 @@ const destinations = [
     coverImage: "images/italy/florence/florence-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "florence.html",
+    page: "cities/florence.html",
   },
   {
     id: 9,
@@ -114,7 +114,7 @@ const destinations = [
     coverImage: "images/italy/milan/milan-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "milan.html",
+    page: "cities/milan.html",
   },
   {
     id: 10,
@@ -127,7 +127,7 @@ const destinations = [
     coverImage: "images/norway/oslo/oslo-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "oslo.html",
+    page: "cities/oslo.html",
   },
   {
     id: 11,
@@ -140,6 +140,6 @@ const destinations = [
     coverImage: "images/greece/eipiros/eipiros-cover.jpeg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "eipiros.html",
+    page: "cities/eipiros.html",
   },
 ];
