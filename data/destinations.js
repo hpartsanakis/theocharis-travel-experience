@@ -144,4 +144,17 @@ const destinations = [
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "cities/reykjavik.html",
   },
+  {
+    id: 13,
+    slug: "athens",
+    city: "Athens",
+    country: "Greece",
+    year: "2025",
+    category: "City",
+    featured: true,
+    coverImage: "images/greece/athens/athens-cover.jpg",
+    shortDescription:
+      "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
+    page: "cities/athens.html",
+  },
 ];
