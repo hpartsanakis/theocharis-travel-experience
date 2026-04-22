@@ -47,7 +47,7 @@ const destinations = [
     year: "2025",
     category: "City",
     featured: true,
-    coverImage: "images/denmark/copenhagen/copenhagen-cover.jpg",
+    coverImage: "images/dennmark/copenhagen/copenhagen-cover.jpg",
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "cities/copenhagen.html",
