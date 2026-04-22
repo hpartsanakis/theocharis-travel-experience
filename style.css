@@ -319,7 +319,6 @@ a {
   margin-bottom: 1.2rem;
 }
 
-
 /* ========== GALLERY ========== */
 .gallery-grid {
   display: grid;
@@ -495,6 +494,16 @@ a {
 }
 
 /* ========== TABLET ========== */
+@media (max-width: 767px) {
+  .overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(2, 6, 23, 0.72),
+      rgba(2, 6, 23, 0.18)
+    );
+  }
+}
 @media (min-width: 768px) {
   .site-header .container {
     flex-direction: row;
