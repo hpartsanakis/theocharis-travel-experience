@@ -38,6 +38,7 @@ const destinations = [
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "cities/edinburgh.html",
   },
+
   {
     id: 4,
     slug: "copenhagen",
@@ -64,19 +65,7 @@ const destinations = [
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "cities/london.html",
   },
-  {
-    id: 6,
-    slug: "iceland",
-    city: "Reykjavik",
-    country: "Iceland",
-    year: "2025",
-    category: "Nature & Adventure",
-    featured: true,
-    coverImage: "images/iceland/reykjavik-cover.jpeg",
-    shortDescription:
-      "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
-    page: "cities/iceland.html",
-  },
+
   {
     id: 7,
     slug: "dublin",
@@ -141,5 +130,18 @@ const destinations = [
     shortDescription:
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "cities/eipiros.html",
+  },
+  {
+    id: 12,
+    slug: "reykjavik",
+    city: "Reykjavik",
+    country: "Iceland",
+    year: "2025",
+    category: "City",
+    featured: true,
+    coverImage: "images/iceland/reykjavik/reykjavik-cover.jpg",
+    shortDescription:
+      "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
+    page: "cities/reykjavik.html",
   },
 ];
