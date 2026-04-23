@@ -157,4 +157,17 @@ const destinations = [
       "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
     page: "cities/athens.html",
   },
+  {
+    id: 14,
+    slug: "malmoe",
+    city: "Malmoe",
+    country: "Sweden",
+    year: "2025",
+    category: "City",
+    featured: true,
+    coverImage: "images/sweden/malmoe/malmoe-cover.jpg",
+    shortDescription:
+      "Stone streets, historic character, dramatic views, and atmospheric city scenes.",
+    page: "cities/malmoe.html",
+  },
 ];
