@@ -1,21 +1,67 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ========================= -->
+    <!-- BASIC META -->
+    <!-- ========================= -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Theocharis Travel Experience</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- ========================= -->
+    <!-- CSS -->
+    <!-- ========================= -->
+
+    <link rel="stylesheet" href="style.css?v=1" />
+
+    <!-- ========================= -->
+    <!-- PWA / iPHONE -->
+    <!-- ========================= -->
+
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="theme-color" content="#0b1320" />
+
+    <!-- iPhone Home Screen Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/icon-180.png"
+    />
+
+    <!-- Browser Tab Icon -->
+    <link rel="icon" href="icons/icon-192.png" />
+
+    <!-- iPhone App Mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Theocharis Travel"
+    />
   </head>
 
   <body>
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
     <header class="site-header">
-      <div class="container">
+      <div class="container header-container">
         <div class="logo">
           <a href="index.html">Theocharis Travel Experience</a>
         </div>
 
-        <button class="menu-toggle" aria-label="Open menu">☰</button>
+        <!-- Mobile menu button -->
+        <button class="menu-toggle">☰</button>
 
+        <!-- Navigation -->
         <nav class="site-nav">
           <a href="#about">About</a>
           <a href="#destinations">Destinations</a>
@@ -26,95 +72,119 @@
     </header>
 
     <main>
+      <!-- ========================= -->
+      <!-- HERO -->
+      <!-- ========================= -->
+
       <section class="hero reveal">
-        <div class="container">
-          <div class="hero-text">
-            <h1>Theocharis Travel Experience</h1>
-            <p>
-              I capture places the way they felt, not just how they looked. This is a personal space where I share travel photography, impressions, and memories from the places I have visited.
-            </p>
-            <a href="#destinations" class="btn">Explore Destinations</a>
-          </div>
+        <div class="container hero-content">
+          <h1>Theocharis Travel Experience</h1>
+
+          <p>
+            A personal collection of travel photography, stories, and moments
+            from cities and landscapes around the world.
+          </p>
+
+          <a href="#destinations" class="btn">
+            Explore Destinations
+          </a>
         </div>
       </section>
+
+      <!-- ========================= -->
+      <!-- ABOUT -->
+      <!-- ========================= -->
 
       <section id="about" class="about reveal">
         <div class="container">
           <h2>About This Journey</h2>
+
           <p>
-            Welcome to Theocharis Travel Experience — a personal space where I
-            share travel photography, impressions, and memories from the places
-            I have visited.
+            This project combines photography, storytelling, and web
+            development into one travel experience.
           </p>
         </div>
       </section>
+
+      <!-- ========================= -->
+      <!-- DESTINATIONS -->
+      <!-- ========================= -->
 
       <section id="destinations" class="destinations reveal">
         <div class="container">
           <h2>Featured Destinations</h2>
+
           <p class="section-intro">
-            A selection of places that left a strong impression on me through
-            light, atmosphere, and unforgettable travel moments.
+            Explore selected cities grouped by country.
           </p>
 
+          <!-- Dynamic content generated from destinations.js -->
           <div id="featured-destinations"></div>
         </div>
       </section>
 
+      <!-- ========================= -->
+      <!-- STORIES -->
+      <!-- ========================= -->
+
       <section id="stories" class="stories reveal">
         <div class="container">
           <h2>Travel Stories</h2>
-          <p class="section-intro">
-            Short personal notes and impressions from journeys that stayed with
-            me long after the trip ended.
-          </p>
 
           <article class="story">
             <h3>Walking Through Verona</h3>
-            <p>
-              Verona felt elegant and calm at the same time. Walking through its
-              streets, I was drawn to the warm colors and the atmosphere that
-              made even ordinary moments feel cinematic.
-            </p>
-          </article>
 
-          <article class="story">
-            <h3>First Impressions of Edinburgh</h3>
             <p>
-              Edinburgh immediately gave me a strong sense of character. The
-              stone streets and historic architecture created a dramatic mood
-              that stayed with me from the first walk onward.
+              Verona felt calm, elegant, and cinematic with warm evening light
+              across the old streets.
             </p>
           </article>
         </div>
       </section>
     </main>
 
+    <!-- ========================= -->
+    <!-- LIGHTBOX -->
+    <!-- ========================= -->
+
+    <div class="lightbox">
+      <button class="lightbox-close">&times;</button>
+
+      <button class="lightbox-prev">&#10094;</button>
+
+      <img class="lightbox-img" src="" alt="" />
+
+      <button class="lightbox-next">&#10095;</button>
+
+      <div class="lightbox-counter">1 / 1</div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
     <footer id="contact" class="site-footer reveal">
       <div class="container">
-        <div class="contact-box">
-          <h2>Contact</h2>
-          <p class="contact-text">
-            If you would like to connect, follow my journeys, or get in touch
-            about travel photography, you can find me here.
-          </p>
+        <h2>Contact</h2>
 
-          <div class="contact-links">
-            <a href="mailto:your@email.com" class="contact-link">Email Me</a>
-            <a
-              href="https://www.instagram.com/harrispartsanakis/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              Instagram
-            </a>
-          </div>
-        </div>
+        <p>
+          Follow my journeys and photography on Instagram.
+        </p>
+
+        <a
+          href="https://www.instagram.com/harrispartsanakis/"
+          target="_blank"
+        >
+          Instagram
+        </a>
       </div>
     </footer>
 
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
     <script src="data/destinations.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=1"></script>
   </body>
 </html>
