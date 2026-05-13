@@ -8,7 +8,7 @@ const destinations = [
     category: "City",
     featured: true,
 
-    coverImage: "images/italy/verona/verona-cover.jpg",
+    coverImage: "images/italy/verona/optimized/verona-cover.jpg",
 
     shortDescription:
       "Historic streets, elegant architecture, and warm Italian atmosphere.",
@@ -25,7 +25,7 @@ const destinations = [
     category: "City",
     featured: true,
 
-    coverImage: "images/denmark/copenhagen/copenhagen-cover.jpg",
+    coverImage: "images/denmark/copenhagen/optimized/copenhagen-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",

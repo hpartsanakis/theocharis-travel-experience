@@ -29,7 +29,9 @@
     <main>
       <section
         class="hero reveal destination-hero"
-        style="--hero-image: url('../images/italy/verona/verona-cover.jpg');"
+        style="
+          --hero-image: url(&quot;../images/italy/verona/optimized/verona-cover.jpg&quot;);
+        "
       >
         <div class="container">
           <div class="hero-text">
@@ -66,65 +68,112 @@
 
           <div class="gallery-grid city-gallery">
             <div class="gallery-item">
-              <img
-                src="../images/italy/verona/verona-1.jpeg"
-                alt="Piazza delle Erbe in Verona"
-              />
-              <div class="overlay">
-                <span>Piazza delle Erbe in Verona</span>
-              </div>
+              <picture>
+                <source
+                  srcset="../images/italy/verona/webp/verona-1.webp"
+                  type="image/webp"
+                />
+
+                <img
+                  src="../images/italy/verona/optimized/verona-1.jpeg"
+                  alt="Piazza delle Erbe in Verona"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <p>Piazza delle Erbe in Verona</p>
             </div>
 
             <div class="gallery-item">
-              <img
-                src="../images/italy/verona/verona-2.jpeg"
-                alt="Castel San Pietro in Verona"
-              />
-              <div class="overlay">
-                <span>Castel San Pietro in Verona</span>
-              </div>
+              <picture>
+                <source
+                  srcset="../images/italy/verona/webp/verona-2.webp"
+                  type="image/webp"
+                />
+
+                <img
+                  src="../images/italy/verona/optimized/verona-2.jpeg"
+                  alt="Kastel san Pietro in Verona"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <p>Castel san Pietro in Verona</p>
             </div>
 
             <div class="gallery-item">
-              <img
-                src="../images/italy/verona/verona-3.jpeg"
-                alt="Torre dei Lamberti in Verona"
-              />
-              <div class="overlay">
-                <span>Torre dei Lamberti in Verona</span>
-              </div>
+              <picture>
+                <source
+                  srcset="../images/italy/verona/webp/verona-3.webp"
+                  type="image/webp"
+                />
+
+                <img
+                  src="../images/italy/verona/optimized/verona-3.jpeg"
+                  alt="Tore dei Lamberti in Verona"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <p>Torre dei Lamberti in Verona</p>
             </div>
 
             <div class="gallery-item">
-              <img
-                src="../images/italy/verona/verona-4.jpeg"
-                alt="Cathedrale di Santa Maria Matricolare in Verona"
-              />
-              <div class="overlay">
-                <span>Cathedrale di Santa Maria Matricolare in Verona</span>
-              </div>
+              <picture>
+                <source
+                  srcset="../images/italy/verona/webp/verona-4.webp"
+                  type="image/webp"
+                />
+
+                <img
+                  src="../images/italy/verona/optimized/verona-4.jpeg"
+                  alt="Cathedrale di Santa Maria Matricolare in Verona"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <p>Cathedrale di Santa Maria Matricolare in Verona</p>
             </div>
 
             <div class="gallery-item">
-              <img
-                src="../images/italy/verona/verona-5.jpeg"
-                alt="Arco della Costa in Verona"
-              />
-              <div class="overlay">
-                <span>Arco della Costa in Verona</span>
-              </div>
+              <picture>
+                <source
+                  srcset="../images/italy/verona/webp/verona-5.webp"
+                  type="image/webp"
+                />
+
+                <img
+                  src="../images/italy/verona/optimized/verona-5.jpeg"
+                  alt="Arco della Costa in Verona"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <p>Arco della Costa in Verona</p>
             </div>
 
             <div class="gallery-item">
-              <img
-                src="../images/italy/verona/verona-6.jpeg"
-                alt="Porta Borsari in Verona"
-              />
-              <div class="overlay">
-                <span>Porta Borsari in Verona</span>
-              </div>
+              <picture>
+                <source
+                  srcset="../images/italy/verona/webp/verona-6.webp"
+                  type="image/webp"
+                />
+
+                <img
+                  src="../images/italy/verona/optimized/verona-6.jpeg"
+                  alt="Porta Borsari in Verona"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <p>Porta Borsari in Verona</p>
             </div>
-            
           </div>
         </div>
       </section>
@@ -164,7 +213,7 @@
 
           <div class="contact-links">
             <a href="mailto:your@email.com" class="contact-link">Email Me</a>
-        <a
+            <a
               href="https://www.instagram.com/harrispartsanakis/"
               target="_blank"
               rel="noopener noreferrer"
@@ -178,16 +227,18 @@
     </footer>
 
     <div class="lightbox">
-  <button class="lightbox-close" aria-label="Close image">&times;</button>
+      <button class="lightbox-close" aria-label="Close image">&times;</button>
 
-  <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+      <button class="lightbox-prev" aria-label="Previous image">
+        &#10094;
+      </button>
 
-  <img class="lightbox-img" src="" alt="" />
+      <img class="lightbox-img" src="" alt="" />
 
-  <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+      <button class="lightbox-next" aria-label="Next image">&#10095;</button>
 
-  <div class="lightbox-counter">1 / 1</div>
-</div>
+      <div class="lightbox-counter">1 / 1</div>
+    </div>
 
     <script src="../script.js"></script>
   </body>
