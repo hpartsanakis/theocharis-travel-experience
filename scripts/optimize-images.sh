@@ -1,45 +1,37 @@
 #!/bin/bash
 
-SOURCE_DIR="$1"
-OUTPUT_DIR="$2"
-MAX_WIDTH="${3:-2000}"
-QUALITY="${4:-82}"
+# ==========================================
+# PROFESSIONAL IMAGE OPTIMIZER
+# ==========================================
 
-if [ -z "$SOURCE_DIR" ] || [ -z "$OUTPUT_DIR" ]; then
-  echo "Usage: ./optimize-images.sh source_folder output_folder [max_width] [quality]"
-  echo "Example: ./optimize-images.sh images-original/italy/verona images/italy/verona 2000 82"
-  exit 1
-fi
+# Usage:
+# ./scripts/optimize-images.sh denmark copenhagen
+
+COUNTRY=$1
+CITY=$2
+
+INPUT_DIR="images/$COUNTRY/$CITY/originals"
+OUTPUT_DIR="images/$COUNTRY/$CITY/optimized"
+WEBP_DIR="images/$COUNTRY/$CITY/webp"
 
 mkdir -p "$OUTPUT_DIR"
+mkdir -p "$WEBP_DIR"
 
-shopt -s nullglob
+echo "Optimizing JPG images..."
 
-for file in "$SOURCE_DIR"/*; do
-  if [ -f "$file" ]; then
-    filename=$(basename "$file")
-    extension="${filename##*.}"
-    extension_lower=$(echo "$extension" | tr '[:upper:]' '[:lower:]')
+for img in "$INPUT_DIR"/*.{jpg,JPG,jpeg,JPEG}; do
+  [ -e "$img" ] || continue
 
-    case "$extension_lower" in
-      jpg|jpeg|png|webp)
-        output_file="$OUTPUT_DIR/${filename%.*}.jpg"
+  filename=$(basename "$img")
 
-        magick "$file" \
-          -auto-orient \
-          -resize "${MAX_WIDTH}x>" \
-          -strip \
-          -interlace Plane \
-          -quality "$QUALITY" \
-          "$output_file"
+  # Optimized JPG
+  sips -Z 1600 "$img" --out "$OUTPUT_DIR/$filename" >/dev/null
 
-        echo "Optimized: $filename -> $(basename "$output_file")"
-        ;;
-      *)
-        echo "Skipped: $filename"
-        ;;
-    esac
-  fi
+  # WEBP conversion
+  cwebp -q 85 "$img" -o "$WEBP_DIR/${filename%.*}.webp" >/dev/null 2>&1
+
+  echo "Processed: $filename"
 done
 
-echo "Done. Optimized images saved in: $OUTPUT_DIR"
+echo ""
+echo "Optimization complete."
