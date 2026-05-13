@@ -25,6 +25,10 @@ img {
   margin: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ========================= */
 /* HEADER */
 /* ========================= */
@@ -191,6 +195,15 @@ img {
   object-fit: cover;
 
   display: block;
+  .gallery-item img {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
+
+.gallery-item img {
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* CAPTION BELOW IMAGE */
