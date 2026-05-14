@@ -32,4 +32,36 @@ const destinations = [
 
     page: "cities/copenhagen.html",
   },
+  {
+    id: 3,
+    slug: "cyclades",
+    city: "Cyclades",
+    country: "Greece",
+    year: "2018",
+    category: "Islands",
+    featured: true,
+
+    coverImage: "images/greece/cyclades/optimized/cyclades-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/cyclades.html",
+  },
+  {
+    id: 4,
+    slug: "edinburgh",
+    city: "Edinburgh",
+    country: "Scotland",
+    year: "2019",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/scotland/edinburgh/optimized/edinburgh-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/edinburgh.html",
+  },
 ];
