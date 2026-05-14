@@ -64,4 +64,36 @@ const destinations = [
 
     page: "cities/edinburgh.html",
   },
+  {
+    id: 5,
+    slug: "dublin",
+    city: "Dublin",
+    country: "Ireland",
+    year: "2019",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/ireland/dublin/optimized/dublin-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/dublin.html",
+  },
+  {
+    id: 6,
+    slug: "florence",
+    city: "Florence",
+    country: "Italy",
+    year: "2019",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/ireland/dublin/optimized/dublin-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/florence.html",
+  },
 ];
