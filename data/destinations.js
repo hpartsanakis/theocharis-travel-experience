@@ -96,4 +96,20 @@ const destinations = [
 
     page: "cities/florence.html",
   },
+  {
+    id: 7,
+    slug: "athens",
+    city: "Athens",
+    country: "Greece",
+    year: "2021",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/greece/athens/optimized/athens_cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/athens.html",
+  },
 ];

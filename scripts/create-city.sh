@@ -50,7 +50,7 @@ cat > "$HTML_FILE" <<EOF
       class="hero reveal destination-hero"
       style="
         --hero-image:
-        url(../images/$COUNTRY/$CITY_LOWER/optimized/$CITY_LOWER-cover.jpeg);
+        url(../images/$COUNTRY/$CITY_LOWER/optimized/$CITY_LOWER_cover.jpeg);
       "
     >
       <div class="container">
