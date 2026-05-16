@@ -112,4 +112,52 @@ const destinations = [
 
     page: "cities/athens.html",
   },
+  {
+    id: 8,
+    slug: "milan",
+    city: "Milan",
+    country: "Italy",
+    year: "2022",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/italy/milan/optimized/milan-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/milan.html",
+  },
+  {
+    id: 9,
+    slug: "oslo",
+    city: "Oslo",
+    country: "Norway",
+    year: "2022",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/norway/oslo/optimized/oslo-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/oslo.html",
+  },
+  {
+    id: 10,
+    slug: "paros",
+    city: "Paros",
+    country: "Norway",
+    year: "2022",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/greece/paros/optimized/paros-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/paros.html",
+  },
 ];
