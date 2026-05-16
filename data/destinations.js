@@ -185,7 +185,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/iiceland/reykjavik/optimized/reykjavik-cover.jpeg",
+    coverImage: "images/iceland/reykjavik/optimized/reykjavik-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
