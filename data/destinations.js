@@ -148,7 +148,7 @@ const destinations = [
     id: 10,
     slug: "paros",
     city: "Paros",
-    country: "Norway",
+    country: "Greece",
     year: "2022",
     category: "city",
     featured: true,
@@ -194,19 +194,66 @@ const destinations = [
   },
   {
     id: 13,
-    slug: "copenhagen",
-    city: "Copenhagen",
-    country: "Denmark",
+    slug: "wien",
+    city: "wien",
+    country: "Austria",
     year: "2023",
     category: "city",
     featured: true,
 
-    coverImage: "images/denmark/copenhagen/optimized/copenhagen-cover.jpg",
+    coverImage: "images/austria/wien/optimized/wien-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
 
-    page: "cities/copenhagen.html",
+    page: "cities/wien.html",
   },
-  
+  {
+    id: 14,
+    slug: "malmoe",
+    city: "Malmoe",
+    country: "Sweden",
+    year: "2023",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/sweden/malmoe/optimized/malmoe-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/malmoe.html",
+  },
+  {
+    id: 15,
+    slug: "bergen",
+    city: "Bergen",
+    country: "Norway",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/norway/bergen/optimized/bergen-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/bergen.html",
+  },
+  {
+    id: 16,
+    slug: "sounio",
+    city: "sounio",
+    country: "Greece",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/greece/sounio/optimized/sounio-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/sounio.html",
+  },
 ];
