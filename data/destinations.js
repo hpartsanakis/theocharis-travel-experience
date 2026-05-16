@@ -160,4 +160,36 @@ const destinations = [
 
     page: "cities/paros.html",
   },
+  {
+    id: 11,
+    slug: "london",
+    city: "London",
+    country: "England",
+    year: "2022",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/england/london/optimized/london-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/london.html",
+  },
+  {
+    id: 12,
+    slug: "reykjavik",
+    city: "Reykjavik",
+    country: "Iceland",
+    year: "2022",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/iiceland/reykjavik/optimized/reykjavik-cover.jpeg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/reykjavik.html",
+  },
 ];
