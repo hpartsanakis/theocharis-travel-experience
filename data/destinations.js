@@ -165,7 +165,7 @@ const destinations = [
     slug: "london",
     city: "London",
     country: "England",
-    year: "2022",
+    year: "2023",
     category: "city",
     featured: true,
 
@@ -181,7 +181,7 @@ const destinations = [
     slug: "reykjavik",
     city: "Reykjavik",
     country: "Iceland",
-    year: "2022",
+    year: "2023",
     category: "city",
     featured: true,
 
@@ -192,4 +192,21 @@ const destinations = [
 
     page: "cities/reykjavik.html",
   },
+  {
+    id: 13,
+    slug: "copenhagen",
+    city: "Copenhagen",
+    country: "Denmark",
+    year: "2023",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/denmark/copenhagen/optimized/copenhagen-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/copenhagen.html",
+  },
+  
 ];
