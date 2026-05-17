@@ -288,4 +288,36 @@ const destinations = [
 
     page: "cities/prague.html",
   },
+  {
+    id: 19,
+    slug: "serifos",
+    city: "Serifos",
+    country: "Greece",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/greece/serifos/optimized/serifos-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/serifos.html",
+  },
+  {
+    id: 20,
+    slug: "sifnos",
+    city: "Sifnos",
+    country: "Greece",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/greece/sifnos/optimized/sifnos-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/sifnos.html",
+  },
 ];
