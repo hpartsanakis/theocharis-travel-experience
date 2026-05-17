@@ -256,4 +256,20 @@ const destinations = [
 
     page: "cities/sounio.html",
   },
+  {
+    id: 17,
+    slug: "salzburg",
+    city: "Salzburg",
+    country: "Austria",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/austria/salzburg/optimized/salzburg-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/salzburg.html",
+  },
 ];
