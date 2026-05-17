@@ -313,7 +313,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/sifnos/optimized/sifnos-cover.jpg",
+    coverImage: "images/greece/sifnos/optimized/sifnos-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
