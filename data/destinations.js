@@ -272,4 +272,20 @@ const destinations = [
 
     page: "cities/salzburg.html",
   },
+  {
+    id: 18,
+    slug: "prague",
+    city: "Prague",
+    country: "Czechia",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/czechia/prague/optimized/prague-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/prague.html",
+  },
 ];
