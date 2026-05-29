@@ -336,4 +336,20 @@ const destinations = [
 
     page: "cities/tromso.html",
   },
+  {
+    id: 22,
+    slug: "tzoumerka",
+    city: "Tzoumerka",
+    country: "Greece",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/greece/tzoumerka/optimized/tzoumerka-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/tzoumerka.html",
+  },
 ];
