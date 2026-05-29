@@ -320,4 +320,20 @@ const destinations = [
 
     page: "cities/sifnos.html",
   },
+  {
+    id: 21,
+    slug: "tromso",
+    city: "Tromso",
+    country: "Norway",
+    year: "2024",
+    category: "city",
+    featured: true,
+
+    coverImage: "images/norway/tromso/optimized/tromso-cover.jpg",
+
+    shortDescription:
+      "Nordic atmosphere, colorful houses, and calm city moments.",
+
+    page: "cities/tromso.html",
+  },
 ];
