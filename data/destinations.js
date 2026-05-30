@@ -41,7 +41,7 @@ const destinations = [
     category: "Islands",
     featured: true,
 
-    coverImage: "images/greece/cyclades/optimized/cyclades-cover.jpg",
+    coverImage: "images/cities/cyclades/optimized/cyclades-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -89,7 +89,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/ireland/dublin/optimized/dublin-cover.jpeg",
+    coverImage: "images/italy/florence/optimized/florence-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -105,7 +105,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/athens/optimized/athens_cover.jpeg",
+    coverImage: "images/cities/athens/optimized/athens_cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -153,7 +153,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/paros/optimized/paros-cover.jpeg",
+    coverImage: "images/cities/paros/optimized/paros-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -249,7 +249,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/sounio/optimized/sounio-cover.jpg",
+    coverImage: "images/cities/sounio/optimized/sounio-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -297,7 +297,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/serifos/optimized/serifos-cover.jpg",
+    coverImage: "images/cities/serifos/optimized/serifos-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -313,7 +313,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/sifnos/optimized/sifnos-cover.jpeg",
+    coverImage: "images/cities/sifnos/optimized/sifnos-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -345,7 +345,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/greece/tzoumerka/optimized/tzoumerka-cover.jpg",
+    coverImage: "images/cities/tzoumerka/optimized/tzoumerka-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
