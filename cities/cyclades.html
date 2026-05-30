@@ -21,6 +21,15 @@
     >
       <div class="container">
         <div class="hero-text">
+          
+          <nav class="breadcrumbs">
+            <a href="../index.html">Countries</a>
+            <span>›</span>
+            <a href="../countries/greece.html">Greece</a>
+            <span>›</span>
+            <span>Cyclades</span>
+          </nav>
+
           <p class="eyebrow">greece</p>
 
           <h1>cyclades</h1>
@@ -497,17 +506,19 @@
     </section>
 
     <!-- LIGHTBOX -->
+    <div class="photo-viewer" id="photoViewer">
+      <button class="viewer-close" id="viewerClose">×</button>
+      <button class="viewer-arrow viewer-prev" id="viewerPrev">‹</button>
 
-    <div class="lightbox">
-      <button class="lightbox-close">&times;</button>
+      <figure class="viewer-frame">
+        <img id="viewerImage" src="" alt="" />
+        <figcaption>
+          <h3 id="viewerTitle"></h3>
+          <p id="viewerText"></p>
+        </figcaption>
+      </figure>
 
-      <button class="lightbox-prev">&#10094;</button>
-
-      <img class="lightbox-img" src="" alt="" />
-
-      <button class="lightbox-next">&#10095;</button>
-
-      <div class="lightbox-counter">1 / 1</div>
+      <button class="viewer-arrow viewer-next" id="viewerNext">›</button>
     </div>
 
     <script src="../script.js?v=1"></script>

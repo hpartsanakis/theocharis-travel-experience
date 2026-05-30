@@ -12,87 +12,26 @@ if (menuToggle && siteNav) {
 }
 
 // =========================
-// DESTINATIONS RENDER
+// COUNTRIES ON HOMEPAGE
 // =========================
 
-const featuredDestinationsContainer = document.querySelector(
-  "#featured-destinations",
-);
-
-function renderFeaturedDestinations() {
-  if (!featuredDestinationsContainer) return;
-
-  const featuredDestinations = destinations.filter(
-    (destination) => destination.featured,
-  );
-
-  const groupedByCountry = featuredDestinations.reduce(
-    (groups, destination) => {
-      const country = destination.country;
-
-      if (!groups[country]) {
-        groups[country] = [];
-      }
-
-      groups[country].push(destination);
-
-      return groups;
-    },
-    {},
-  );
-
-  const sortedCountries = Object.keys(groupedByCountry).sort();
-
-  featuredDestinationsContainer.innerHTML = sortedCountries
-    .map((country) => {
-      const countryDestinations = groupedByCountry[country];
-
-      return `
-        <div class="destination-group">
-          <h3 class="destination-group-title">${country}</h3>
-
-          <div class="card-grid">
-            ${countryDestinations
-              .map(
-                (destination) => `
-                  <a href="${destination.page}" class="card">
-                    <img
-                      src="${destination.coverImage}"
-                      alt="${destination.city}"
-                      loading="lazy"
-                    />
-
-                    <div class="card-content">
-                      <h3>${destination.city}</h3>
-                      <p>${destination.shortDescription}</p>
-                    </div>
-                  </a>
-                `,
-              )
-              .join("")}
-          </div>
-        </div>
-      `;
-    })
-    .join("");
-}
-
-renderFeaturedDestinations();
-
-// =========================
-// RENDER COUNTRIES
-// =========================
 const countryGrid = document.getElementById("countryGrid");
 
-function getCountriesFromDestinations() {
+function getCountrySlug(country) {
+  return country.toLowerCase();
+}
+
+function renderCountries() {
+  if (!countryGrid || typeof destinations === "undefined") return;
+
   const countries = {};
 
   destinations.forEach((destination) => {
     if (!countries[destination.country]) {
       countries[destination.country] = {
         name: destination.country,
-        count: 0,
         coverImage: destination.coverImage,
+        count: 0,
         cities: [],
       };
     }
@@ -101,21 +40,14 @@ function getCountriesFromDestinations() {
     countries[destination.country].cities.push(destination.city);
   });
 
-  return Object.values(countries);
-}
-
-function renderCountries() {
-  if (!countryGrid) return;
-
-  const countries = getCountriesFromDestinations();
-
-  countryGrid.innerHTML = countries
+  countryGrid.innerHTML = Object.values(countries)
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map((country) => {
-      const slug = country.name.toLowerCase();
+      const slug = getCountrySlug(country.name);
 
       return `
         <a class="country-card" href="countries/${slug}.html">
-          <img src="${country.coverImage}" alt="${country.name}" />
+          <img src="${country.coverImage}" alt="${country.name}" loading="lazy" />
 
           <div class="card-content">
             <h3>${country.name}</h3>
@@ -131,138 +63,175 @@ function renderCountries() {
 renderCountries();
 
 // =========================
-// LIGHTBOX
+// COUNTRY PAGE
 // =========================
 
-const lightbox = document.querySelector(".lightbox");
-const lightboxImg = document.querySelector(".lightbox-img");
-const lightboxClose = document.querySelector(".lightbox-close");
-const lightboxPrev = document.querySelector(".lightbox-prev");
-const lightboxNext = document.querySelector(".lightbox-next");
-const lightboxCounter = document.querySelector(".lightbox-counter");
+const countryPageGrid = document.getElementById("countryPageGrid");
+const countryPageTitle = document.getElementById("countryPageTitle");
 
-let galleryImages = [];
-let currentImageIndex = 0;
-
-function openLightbox(index) {
-  currentImageIndex = index;
-
-  const image = galleryImages[currentImageIndex];
-
-  lightbox.classList.add("active");
-
-  lightboxImg.src = image.src;
-  lightboxImg.alt = image.alt;
-
-  updateCounter();
+function getCurrentCountrySlug() {
+  return window.location.pathname.split("/").pop().replace(".html", "");
 }
 
-function closeLightbox() {
-  lightbox.classList.remove("active");
-}
-
-function showNextImage() {
-  currentImageIndex++;
-
-  if (currentImageIndex >= galleryImages.length) {
-    currentImageIndex = 0;
+function renderCountryPage() {
+  if (
+    !countryPageGrid ||
+    !countryPageTitle ||
+    typeof destinations === "undefined"
+  ) {
+    return;
   }
 
-  openLightbox(currentImageIndex);
-}
+  const countrySlug = getCurrentCountrySlug();
 
-function showPrevImage() {
-  currentImageIndex--;
+  const countryDestinations = destinations.filter((destination) => {
+    return destination.country.toLowerCase() === countrySlug;
+  });
 
-  if (currentImageIndex < 0) {
-    currentImageIndex = galleryImages.length - 1;
+  if (countryDestinations.length === 0) {
+    countryPageTitle.textContent = "Country not found";
+    countryPageGrid.innerHTML = "<p>No destinations found.</p>";
+    return;
   }
 
-  openLightbox(currentImageIndex);
+  countryPageTitle.textContent = countryDestinations[0].country;
+
+  countryPageGrid.innerHTML = countryDestinations
+    .map((destination) => {
+      return `
+        <a class="city-card" href="../${destination.page}">
+          <img src="../${destination.coverImage}" alt="${destination.city}" loading="lazy" />
+
+          <div class="card-content">
+            <h3>${destination.city}</h3>
+            <p>${destination.shortDescription}</p>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
 }
 
-function updateCounter() {
-  lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+renderCountryPage();
+
+// =========================
+// CITY PHOTO VIEWER
+// =========================
+
+const photoViewer = document.getElementById("photoViewer");
+const openViewerBtn = document.getElementById("openViewerBtn");
+
+const viewerImage = document.getElementById("viewerImage");
+const viewerTitle = document.getElementById("viewerTitle");
+const viewerText = document.getElementById("viewerText");
+
+const viewerPrev = document.getElementById("viewerPrev");
+const viewerNext = document.getElementById("viewerNext");
+const viewerClose = document.getElementById("viewerClose");
+
+const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+
+let currentPhotoIndex = 0;
+
+function showPhoto(index) {
+  if (!photoViewer || galleryItems.length === 0) return;
+
+  currentPhotoIndex = index;
+
+  const item = galleryItems[currentPhotoIndex];
+  const image = item.querySelector("img");
+
+  if (!image) return;
+
+  const title =
+    item.querySelector(".gallery-caption h3")?.textContent ||
+    item.querySelector("h3")?.textContent ||
+    image.alt ||
+    "Travel Photo";
+
+  const text =
+    item.querySelector(".gallery-caption p")?.textContent ||
+    item.querySelector("p")?.textContent ||
+    "";
+
+  viewerImage.src = image.src;
+  viewerImage.alt = image.alt;
+
+  viewerTitle.textContent = title;
+  viewerText.textContent = text;
 }
 
-function setupLightbox() {
-  const images = document.querySelectorAll(".gallery-item img");
+function openViewer(index = 0) {
+  if (!photoViewer || galleryItems.length === 0) return;
 
-  galleryImages = Array.from(images);
+  showPhoto(index);
+  photoViewer.classList.add("active");
+  document.body.classList.add("no-scroll");
+}
 
-  galleryImages.forEach((image, index) => {
-    image.addEventListener("click", () => {
-      openLightbox(index);
-    });
+function closeViewer() {
+  if (!photoViewer) return;
+
+  photoViewer.classList.remove("active");
+  document.body.classList.remove("no-scroll");
+}
+
+function showNextPhoto() {
+  const nextIndex = (currentPhotoIndex + 1) % galleryItems.length;
+  showPhoto(nextIndex);
+}
+
+function showPrevPhoto() {
+  const prevIndex =
+    (currentPhotoIndex - 1 + galleryItems.length) % galleryItems.length;
+
+  showPhoto(prevIndex);
+}
+
+if (openViewerBtn) {
+  openViewerBtn.addEventListener("click", () => {
+    openViewer(0);
   });
 }
 
-setupLightbox();
-
-if (lightboxClose) {
-  lightboxClose.addEventListener("click", closeLightbox);
-}
-
-if (lightboxNext) {
-  lightboxNext.addEventListener("click", showNextImage);
-}
-
-if (lightboxPrev) {
-  lightboxPrev.addEventListener("click", showPrevImage);
-}
-
-// Keyboard navigation
-
-document.addEventListener("keydown", (event) => {
-  if (!lightbox.classList.contains("active")) return;
-
-  if (event.key === "Escape") closeLightbox();
-  if (event.key === "ArrowRight") showNextImage();
-  if (event.key === "ArrowLeft") showPrevImage();
+galleryItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    openViewer(index);
+  });
 });
 
-// =========================
-// MOBILE SWIPE
-// =========================
+if (viewerNext) {
+  viewerNext.addEventListener("click", showNextPhoto);
+}
 
-let touchStartX = 0;
-let touchEndX = 0;
+if (viewerPrev) {
+  viewerPrev.addEventListener("click", showPrevPhoto);
+}
 
-if (lightbox) {
-  lightbox.addEventListener("touchstart", (event) => {
-    touchStartX = event.changedTouches[0].screenX;
-  });
+if (viewerClose) {
+  viewerClose.addEventListener("click", closeViewer);
+}
 
-  lightbox.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].screenX;
-
-    const swipeDistance = touchEndX - touchStartX;
-
-    if (Math.abs(swipeDistance) < 50) return;
-
-    if (swipeDistance < 0) {
-      showNextImage();
-    } else {
-      showPrevImage();
+if (photoViewer) {
+  photoViewer.addEventListener("click", (event) => {
+    if (event.target === photoViewer) {
+      closeViewer();
     }
   });
 }
 
-// =========================
-// REVEAL ON SCROLL
-// =========================
+document.addEventListener("keydown", (event) => {
+  if (!photoViewer || !photoViewer.classList.contains("active")) return;
 
-const revealElements = document.querySelectorAll(".reveal");
+  if (event.key === "Escape") {
+    closeViewer();
+  }
 
-function revealOnScroll() {
-  revealElements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
+  if (event.key === "ArrowRight") {
+    showNextPhoto();
+  }
 
-    if (elementTop < window.innerHeight - 100) {
-      element.classList.add("visible");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+  if (event.key === "ArrowLeft") {
+    showPrevPhoto();
+  }
+});
