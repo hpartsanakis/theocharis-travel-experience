@@ -16,27 +16,30 @@ if (menuToggle && siteNav) {
 // =========================
 
 const featuredDestinationsContainer = document.querySelector(
-  "#featured-destinations"
+  "#featured-destinations",
 );
 
 function renderFeaturedDestinations() {
   if (!featuredDestinationsContainer) return;
 
   const featuredDestinations = destinations.filter(
-    (destination) => destination.featured
+    (destination) => destination.featured,
   );
 
-  const groupedByCountry = featuredDestinations.reduce((groups, destination) => {
-    const country = destination.country;
+  const groupedByCountry = featuredDestinations.reduce(
+    (groups, destination) => {
+      const country = destination.country;
 
-    if (!groups[country]) {
-      groups[country] = [];
-    }
+      if (!groups[country]) {
+        groups[country] = [];
+      }
 
-    groups[country].push(destination);
+      groups[country].push(destination);
 
-    return groups;
-  }, {});
+      return groups;
+    },
+    {},
+  );
 
   const sortedCountries = Object.keys(groupedByCountry).sort();
 
@@ -64,7 +67,7 @@ function renderFeaturedDestinations() {
                       <p>${destination.shortDescription}</p>
                     </div>
                   </a>
-                `
+                `,
               )
               .join("")}
           </div>
@@ -75,6 +78,57 @@ function renderFeaturedDestinations() {
 }
 
 renderFeaturedDestinations();
+
+// =========================
+// RENDER COUNTRIES
+// =========================
+const countryGrid = document.getElementById("countryGrid");
+
+function getCountriesFromDestinations() {
+  const countries = {};
+
+  destinations.forEach((destination) => {
+    if (!countries[destination.country]) {
+      countries[destination.country] = {
+        name: destination.country,
+        count: 0,
+        coverImage: destination.coverImage,
+        cities: [],
+      };
+    }
+
+    countries[destination.country].count++;
+    countries[destination.country].cities.push(destination.city);
+  });
+
+  return Object.values(countries);
+}
+
+function renderCountries() {
+  if (!countryGrid) return;
+
+  const countries = getCountriesFromDestinations();
+
+  countryGrid.innerHTML = countries
+    .map((country) => {
+      const slug = country.name.toLowerCase();
+
+      return `
+        <a class="country-card" href="countries/${slug}.html">
+          <img src="${country.coverImage}" alt="${country.name}" />
+
+          <div class="card-content">
+            <h3>${country.name}</h3>
+            <p>${country.count} destinations</p>
+            <small>${country.cities.slice(0, 4).join(", ")}</small>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
+}
+
+renderCountries();
 
 // =========================
 // LIGHTBOX

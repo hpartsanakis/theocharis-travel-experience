@@ -1,38 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Theocharis Travel Experience</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body>
-  <header class="hero">
-    <h1>Theocharis Travel Experience</h1>
-    <p>Stories, cities and moments from every journey.</p>
-  </header>
+    <title>Theocharis Travel Experience</title>
 
-  <main class="container">
-    <h2>Countries</h2>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <section class="country-grid">
-      <a class="country-card" href="countries/greece.html">
-        <img src="images/countries/greece.jpg" alt="Greece" />
-        <div>
-          <h3>Greece</h3>
-          <p>Ioannina, Tzoumerka, Athens, Paros...</p>
-        </div>
-      </a>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Travel Photography</p>
+        <h1>Theocharis Travel Experience</h1>
+        <p>Countries, cities and personal photo stories from my journeys.</p>
+      </div>
+    </header>
 
-      <a class="country-card" href="countries/italy.html">
-        <img src="images/countries/italy.jpg" alt="Italy" />
-        <div>
-          <h3>Italy</h3>
-          <p>Verona, Venice, Rome...</p>
-        </div>
-      </a>
-    </section>
-  </main>
-</body>
+    <main class="container">
+      <section class="section-header">
+        <p class="eyebrow">Explore by country</p>
+        <h2>Countries</h2>
+      </section>
+
+      <section class="country-grid" id="countryGrid">
+        <a class="country-card" href="countries/greece.html">
+          <img src="images/countries/greece.jpg" alt="Greece" />
+          <div class="card-content">
+            <h3>Greece</h3>
+            <p>Ioannina, Tzoumerka, Athens, Paros and more.</p>
+          </div>
+        </a>
+
+        <a class="country-card" href="countries/italy.html">
+          <img src="images/countries/italy.jpg" alt="Italy" />
+          <div class="card-content">
+            <h3>Italy</h3>
+            <p>Verona, Venice, Rome and Italian travel moments.</p>
+          </div>
+        </a>
+
+        <a class="country-card" href="countries/scotland.html">
+          <img src="images/countries/scotland.jpg" alt="Scotland" />
+          <div class="card-content">
+            <h3>Scotland</h3>
+            <p>Edinburgh, landscapes and atmospheric city stories.</p>
+          </div>
+        </a>
+
+        <a class="country-card" href="countries/austria.html">
+          <img src="images/countries/austria.jpg" alt="Austria" />
+          <div class="card-content">
+            <h3>Austria</h3>
+            <p>Vienna, mountains, lakes and alpine impressions.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+    <script src="data/destinations.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
