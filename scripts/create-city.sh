@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage:
-# ./scripts/create-city.sh greece athens
+# ./scripts/create-city.sh greece paros
 
 COUNTRY=$1
 CITY=$2
