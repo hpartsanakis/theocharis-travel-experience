@@ -4,35 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Italy | Theocharis Travel Experience</title>
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
   </head>
 
   <body>
-    <header class="hero small-hero">
-      <h1>Italy</h1>
-      <p>My Italy travel stories and photo moments.</p>
-    </header>
-
+    <nav class="breadcrumbs">
+      <a href="../index.html">Countries</a>
+      <span>›</span>
+    </nav>
     <main class="container">
-      <a class="back-link" href="../index.html">← Back to countries</a>
-
-      <section class="city-grid">
-        <a class="city-card" href="../cities/verona.html">
-          <img src="../images/cities/verona.jpg" alt="Verona" />
-          <div>
-            <h3>Verona</h3>
-            <p>Lake, old town and evening atmosphere.</p>
-          </div>
-        </a>
-
-        <a class="city-card" href="../cities/milan.html">
-          <img src="../images/cities/milan.jpg" alt="Milan" />
-          <div>
-            <h3>Milan</h3>
-            <p>Mountains, villages and stone bridges.</p>
-          </div>
-        </a>
+      <section class="section-header">
+        <p class="eyebrow">Country</p>
+        <h1 id="countryPageTitle">Italy</h1>
       </section>
+
+      <section class="city-grid" id="countryPageGrid"></section>
     </main>
+
+    <script src="../data/destinations.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
