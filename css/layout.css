@@ -1,0 +1,32 @@
+/* =========================
+   CONTAINERS
+========================= */
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================
+   GRIDS
+========================= */
+
+.country-grid,
+.city-grid,
+.gallery-grid,
+.intro-cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.country-grid,
+.city-grid,
+.gallery-grid {
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.intro-cards {
+  grid-template-columns:
+    repeat(3, 1fr);
+}

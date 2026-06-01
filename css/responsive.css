@@ -1,0 +1,19 @@
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .hero,
+  .city-hero {
+    min-height: 70vh;
+    padding: 2rem;
+  }
+
+  .intro-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-card {
+    text-align: center;
+  }
+}
