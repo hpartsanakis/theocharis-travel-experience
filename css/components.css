@@ -12,6 +12,16 @@
   color: #111827;
   font-weight: 800;
   cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(250,204,21,.35);
 }
 
 .back-link,
@@ -107,13 +117,12 @@
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.65),
-      rgba(0,0,0,.15),
-      transparent
-    );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15),
+    transparent
+  );
 
   pointer-events: none;
 }

@@ -1,35 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Theocharis Travel Experience</title>
-  <link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/pages.css">
-<link rel="stylesheet" href="css/responsive.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theocharis Travel Experience</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-<body>
-  <header class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Travel Photography</p>
-      <h1>Theocharis Travel Experience</h1>
-      <p>Countries, cities and personal photo stories from my journeys.</p>
-    </div>
-  </header>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Travel Photography</p>
+        <h1>Theocharis Travel Experience</h1>
+        <p>Countries, cities and personal photo stories from my journeys.</p>
+      </div>
+    </header>
 
-  <main class="container">
-    <section class="section-header">
-      <p class="eyebrow">Explore</p>
-      <h2>Countries</h2>
+    <section class="featured-section container">
+      <p class="eyebrow">Featured Destinations</p>
+
+      <h2>Journeys Worth Exploring</h2>
+
+      <p class="featured-lead">
+        A selection of destinations that left a lasting impression through
+        culture, landscapes, history, and unforgettable travel moments.
+      </p>
     </section>
 
-    <section class="country-grid" id="countryGrid"></section>
-  </main>
+    <main class="container">
+      <section class="section-header">
+        <p class="eyebrow">Explore</p>
+        <h2>Countries</h2>
+      </section>
 
-  <script src="data/destinations.js"></script>
-  <script src="script.js"></script>
-</body>
+      <section class="country-grid" id="countryGrid"></section>
+    </main>
+
+    <script src="data/destinations.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

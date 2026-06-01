@@ -4,19 +4,23 @@
 
 .hero,
 .city-hero {
-  min-height: 90vh;
+  
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 4rem;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero {
+  min-height: 75vh;
   background: linear-gradient(135deg, #020617, #1e293b);
 }
 
 .city-hero img {
+  min-height: 85vh;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -42,8 +46,13 @@
 
 .hero h1,
 .city-hero h1 {
-  text-shadow:
-    0 4px 30px rgba(0,0,0,.5);
+  max-width: 10ch;
+
+  text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
+
+  letter-spacing: -0.03em;
+
+  line-height: 0.95;
 }
 
 .hero p,
@@ -52,7 +61,7 @@
 
   line-height: 1.8;
 
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 h1 {
@@ -71,6 +80,22 @@ h2 {
   font-weight: 700;
 }
 
+.hero-content,
+.city-hero-content {
+  animation: heroFadeUp 1s ease;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* =========================
    HOME INTRO
 ========================= */
@@ -105,4 +130,20 @@ h2 {
   margin: 0 auto 4rem;
   line-height: 1.8;
   color: var(--text-secondary);
+}
+
+.featured-section {
+  text-align: center;
+  margin: 6rem auto;
+}
+
+.featured-section h2 {
+  margin-bottom: 1rem;
+}
+
+.featured-lead {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #cbd5e1;
+  line-height: 1.8;
 }
