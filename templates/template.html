@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>*| Theocharis Travel Experience</title>
+
+    <title>{{CITY_NAME}} | Theocharis Travel Experience</title>
+
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
@@ -13,20 +15,23 @@
 
   <body>
     <header class="city-hero">
-      <img src="../images/cities//optimized/-cover.jpeg" alt="" />
+      <img
+        src="../images/cities/{{CITY_SLUG}}/optimized/{{CITY_SLUG}}-cover.jpeg"
+        alt="{{CITY_NAME}} travel photography"
+      />
 
       <div class="city-hero-content">
         <nav class="breadcrumbs">
           <a href="../index.html">Countries</a>
           <span>›</span>
-          <a href="../countries/*.html">*</a>
+          <a href="../countries/{{COUNTRY_SLUG}}.html">{{COUNTRY_NAME}}</a>
           <span>›</span>
-          <span>*</span>
+          <span>{{CITY_NAME}}</span>
         </nav>
 
-        <p class="eyebrow">*</p>
-        <h1>*</h1>
-        <p>Travel photography moments from .</p>
+        <p class="eyebrow">{{COUNTRY_NAME}}</p>
+        <h1>{{CITY_NAME}}</h1>
+        <p>{{CITY_DESCRIPTION}}</p>
 
         <button class="btn" id="openViewerBtn">View Photos</button>
       </div>
@@ -34,11 +39,8 @@
 
     <main class="container">
       <section class="story">
-        <h2>Story</h2>
-        <p>
-          Write here your personal travel story, atmosphere, memories and
-          photography notes from *.
-        </p>
+        <h2>About {{CITY_NAME}}</h2>
+        <p>{{CITY_STORY}}</p>
       </section>
 
       <section class="gallery-grid city-gallery">

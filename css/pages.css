@@ -4,7 +4,6 @@
 
 .hero,
 .city-hero {
-  
   position: relative;
   display: flex;
   align-items: center;
@@ -20,7 +19,6 @@
 }
 
 .city-hero img {
-  min-height: 85vh;
   position: absolute;
   inset: 0;
   width: 100%;

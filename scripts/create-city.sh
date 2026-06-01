@@ -1,131 +1,31 @@
 #!/bin/bash
 
-# Usage:
-# ./scripts/create-city.sh greece paros
+CITY_NAME="$1"
+COUNTRY_NAME="$2"
+CITY_SLUG="$3"
+COUNTRY_SLUG="$4"
 
-COUNTRY=$1
-CITY=$2
-
-COUNTRY_LOWER=$(echo "$COUNTRY" | tr '[:upper:]' '[:lower:]')
-CITY_LOWER=$(echo "$CITY" | tr '[:upper:]' '[:lower:]')
-
-if [ -z "$COUNTRY" ] || [ -z "$CITY" ]; then
-  echo "Usage: ./scripts/create-city.sh country city"
+if [ -z "$CITY_NAME" ] || [ -z "$COUNTRY_NAME" ] || [ -z "$CITY_SLUG" ] || [ -z "$COUNTRY_SLUG" ]; then
+  echo "Usage:"
+  echo "./scripts/create-city.sh \"Milan\" \"Italy\" milan italy"
   exit 1
 fi
 
-mkdir -p "images/cities/$CITY_LOWER/originals"
-mkdir -p "images/cities/$CITY_LOWER/optimized"
-mkdir -p "images/cities/$CITY_LOWER/webp"
-mkdir -p "countries"
-mkdir -p "cities"
+mkdir -p "images/cities/$CITY_SLUG/originals"
+mkdir -p "images/cities/$CITY_SLUG/optimized"
+mkdir -p "images/cities/$CITY_SLUG/webp"
 
-CITY_FILE="cities/$CITY_LOWER.html"
-COUNTRY_FILE="countries/$COUNTRY_LOWER.html"
+cp templates/template.html "cities/$CITY_SLUG.html"
 
-cat > "$CITY_FILE" <<EOF
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>$CITY | Theocharis Travel Experience</title>
-    <link rel="stylesheet" href="../style.css" />
-  </head>
+sed -i '' "s/{{CITY_NAME}}/$CITY_NAME/g" "cities/$CITY_SLUG.html"
+sed -i '' "s/{{COUNTRY_NAME}}/$COUNTRY_NAME/g" "cities/$CITY_SLUG.html"
+sed -i '' "s/{{CITY_SLUG}}/$CITY_SLUG/g" "cities/$CITY_SLUG.html"
+sed -i '' "s/{{COUNTRY_SLUG}}/$COUNTRY_SLUG/g" "cities/$CITY_SLUG.html"
+sed -i '' "s/{{CITY_DESCRIPTION}}/Travel moments and photography from $CITY_NAME./g" "cities/$CITY_SLUG.html"
+sed -i '' "s/{{CITY_STORY}}/$CITY_NAME is a destination full of atmosphere, history, architecture, and unique travel moments captured through my lens./g" "cities/$CITY_SLUG.html"
 
-  <body>
-    <header class="city-hero">
-      <img
-        src="../images/cities/$CITY_LOWER/optimized/${CITY_LOWER}_cover.jpeg"
-        alt="$CITY"
-      />
+echo "City page created:"
+echo "cities/$CITY_SLUG.html"
 
-      <div class="city-hero-content">
-        <nav class="breadcrumbs">
-          <a href="../index.html">Countries</a>
-          <span>›</span>
-          <a href="../countries/$COUNTRY_LOWER.html">$COUNTRY</a>
-          <span>›</span>
-          <span>$CITY</span>
-        </nav>
-
-        <p class="eyebrow">$COUNTRY</p>
-        <h1>$CITY</h1>
-        <p>Travel photography moments from $CITY.</p>
-
-        <button class="btn" id="openViewerBtn">View Photos</button>
-      </div>
-    </header>
-
-    <main class="container">
-      <section class="story">
-        <h2>Story</h2>
-        <p>
-          Write here your personal travel story, atmosphere, memories and
-          photography notes from $CITY.
-        </p>
-      </section>
-
-      <section class="gallery-grid city-gallery">
-        <!-- GENERATED GALLERY -->
-      </section>
-    </main>
-
-    <div class="photo-viewer" id="photoViewer">
-      <button class="viewer-close" id="viewerClose">×</button>
-      <button class="viewer-arrow viewer-prev" id="viewerPrev">‹</button>
-
-      <figure class="viewer-frame">
-        <img id="viewerImage" src="" alt="" />
-        <figcaption>
-          <h3 id="viewerTitle"></h3>
-          <p id="viewerText"></p>
-        </figcaption>
-      </figure>
-
-      <button class="viewer-arrow viewer-next" id="viewerNext">›</button>
-    </div>
-
-    <script src="../script.js"></script>
-  </body>
-</html>
-EOF
-
-if [ ! -f "$COUNTRY_FILE" ]; then
-cat > "$COUNTRY_FILE" <<EOF
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>$COUNTRY | Theocharis Travel Experience</title>
-    <link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/pages.css">
-<link rel="stylesheet" href="../css/responsive.css">
-  </head>
-
-  <body>
-    <main class="container">
-      <a class="back-link" href="../index.html">← Back to Countries</a>
-
-      <section class="section-header">
-        <p class="eyebrow">Country</p>
-        <h1 id="countryPageTitle">$COUNTRY</h1>
-      </section>
-
-      <section class="city-grid" id="countryPageGrid"></section>
-    </main>
-
-    <script src="../data/destinations.js"></script>
-    <script src="../script.js"></script>
-  </body>
-</html>
-EOF
-fi
-
-echo "Created:"
-echo "- $CITY_FILE"
-echo "- $COUNTRY_FILE"
-echo "- images/cities/$CITY_LOWER/"
+echo "Image folders created:"
+echo "images/$COUNTRY_SLUG/$CITY_SLUG/"

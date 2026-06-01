@@ -8,7 +8,7 @@ const destinations = [
     category: "City",
     featured: true,
 
-    coverImage: "images/italy/verona/optimized/verona-cover.jpg",
+    coverImage: "images/cities/verona/optimized/verona-cover.jpg",
 
     shortDescription:
       "Historic streets, elegant architecture, and warm Italian atmosphere.",
@@ -25,7 +25,7 @@ const destinations = [
     category: "City",
     featured: true,
 
-    coverImage: "images/denmark/copenhagen/optimized/copenhagen-cover.jpg",
+    coverImage: "images/cities/copenhagen/optimized/copenhagen-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -57,7 +57,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/scotland/edinburgh/optimized/edinburgh-cover.jpeg",
+    coverImage: "images/cities/edinburgh/optimized/edinburgh-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -73,7 +73,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/ireland/dublin/optimized/dublin-cover.jpeg",
+    coverImage: "images/cities/dublin/optimized/dublin-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -89,7 +89,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/italy/florence/optimized/florence-cover.jpeg",
+    coverImage: "images/cities/florence/optimized/florence-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -121,7 +121,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/italy/milan/optimized/milan-cover.jpeg",
+    coverImage: "images/cities/milan/optimized/milan-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -137,7 +137,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/norway/oslo/optimized/oslo-cover.jpeg",
+    coverImage: "images/cities/oslo/optimized/oslo-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -169,7 +169,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/england/london/optimized/london-cover.jpeg",
+    coverImage: "images/cities/london/optimized/london-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -185,7 +185,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/iceland/reykjavik/optimized/reykjavik-cover.jpeg",
+    coverImage: "images/cities/reykjavik/optimized/reykjavik-cover.jpeg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -201,7 +201,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/austria/wien/optimized/wien-cover.jpg",
+    coverImage: "images/cities/wien/optimized/wien-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -217,7 +217,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/sweden/malmoe/optimized/malmoe-cover.jpg",
+    coverImage: "images/cities/malmoe/optimized/malmoe-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -233,7 +233,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/norway/bergen/optimized/bergen-cover.jpg",
+    coverImage: "images/cities/bergen/optimized/bergen-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -265,7 +265,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/austria/salzburg/optimized/salzburg-cover.jpg",
+    coverImage: "images/cities/salzburg/optimized/salzburg-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -281,7 +281,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/czechia/prague/optimized/prague-cover.jpg",
+    coverImage: "images/cities/prague/optimized/prague-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
@@ -329,7 +329,7 @@ const destinations = [
     category: "city",
     featured: true,
 
-    coverImage: "images/norway/tromso/optimized/tromso-cover.jpg",
+    coverImage: "images/cities/tromso/optimized/tromso-cover.jpg",
 
     shortDescription:
       "Nordic atmosphere, colorful houses, and calm city moments.",
