@@ -72,6 +72,17 @@
 .gallery-item {
   position: relative;
   min-height: 320px;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.country-card:hover,
+.city-card:hover,
+.gallery-item:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
 }
 
 .country-card img,
@@ -80,6 +91,42 @@
   width: 100%;
   height: 320px;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.country-card:hover img,
+.city-card:hover img,
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.country-card::after,
+.city-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.65),
+      rgba(0,0,0,.15),
+      transparent
+    );
+
+  pointer-events: none;
+}
+.card-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  color: white;
 }
 
 .card-content,
@@ -159,11 +206,7 @@
 
   padding: 4rem 2rem 2rem;
 
-  background:
-    linear-gradient(
-      transparent,
-      rgba(0, 0, 0, 0.85)
-    );
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
 }
 
 .viewer-frame h3 {
