@@ -144,15 +144,16 @@ function showPhoto(index) {
   if (!image) return;
 
   const title =
-    item.querySelector(".gallery-caption h3")?.textContent ||
-    item.querySelector("h3")?.textContent ||
-    image.alt ||
-    "Travel Photo";
+  item.querySelector(".gallery-caption h3")?.textContent ||
+  item.querySelector("h3")?.textContent ||
+  image.alt ||
+  "Travel Photo";
 
-  const text =
-    item.querySelector(".gallery-caption p")?.textContent ||
-    item.querySelector("p")?.textContent ||
-    "";
+const text =
+  item.querySelector(".gallery-caption p")?.textContent ||
+  item.querySelector("p")?.textContent ||
+  "";
+  
 
   viewerImage.src = image.src;
   viewerImage.alt = image.alt;
